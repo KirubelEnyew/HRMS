@@ -15,7 +15,7 @@ const Next = ()=>{
         <List>
             <Link to='/dash'>
             <ListItem>
-                <ListItemText>Dashboards</ListItemText>
+                <ListItemText>Dashboard</ListItemText>
             </ListItem>
             </Link>
             <Link to='/abt'>
