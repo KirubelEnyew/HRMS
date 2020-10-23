@@ -1,32 +1,21 @@
-import React,{Component} from 'react';
-import {Button} from 'react-bootstrap';
-class Learn extends Component{
-    constructor(props){
-        super();
-        this.state={
-            age:props.sh.initialAge
-        };
+import React from 'react';
+
+const Madafaka = () => {
+    const [email, setEmail] = React.useState("");
+    const [pass, setPass] = React.useState("");
+    const handleClick = ()=>{
+        console.log(email)
+        console.log(pass)        
     }
-    makeOlder(){
-        this.setState({
-            age:this.state.age+1
-        });
-    }
-    makeYounger(){
-        this.setState({
-            age:this.state.age-1
-        });
-    }
-    render(){
-        return(
-            <div>
-               <p>some info {this.props.sh.name[1]}</p>
-                <p>You are now {this.state.age}</p>
-                <hr/>
-               <Button className="btn-lg btn-primary" onClick={this.makeOlder.bind(this)}>Make Me Older</Button>
-               <Button className="btn-lg btn-primary" onClick={this.makeYounger.bind(this)}>Make Me Younger</Button>
-            </div>
-            );
-    }
+    return (
+        <div>
+            <form onSubmit={handleClick}>
+            <input onChange={(e)=>{setEmail(e.target.value)}}/>
+            <input type="password" onChange={(e)=>{setPass(e.target.value)}}/>
+            <button type = "submit" >GF</button>
+            </form>
+        </div>);
+
 }
-export default Learn;
+
+export default Madafaka;
