@@ -1,4 +1,4 @@
-import { Box, Container, FormControl, Grid, InputLabel, MenuItem, Paper, Select, TextField } from '@material-ui/core';
+import { Box, Button, Container, FormControl, Grid, InputLabel, MenuItem, Paper, Select, TextField } from '@material-ui/core';
 import React from 'react';
 import useStyle from '../../Styling';
 
@@ -37,12 +37,14 @@ const TrainingForm =() => {
                             <FormControl className={classes.formControl}>
                                         <InputLabel>Course Category</InputLabel>
                                         <Select required>
-                                            <MenuItem></MenuItem>
+                                            <MenuItem value={"Skill Development"}>Skill Development</MenuItem>
+                                            <MenuItem value={"Informal Orientation"}>Informal Orientation</MenuItem>
+                                            <MenuItem value={"Formal Orientation"}>Formal Orientation</MenuItem>
                                         </Select>
                             </FormControl>
                             <Box paddingY={2}/>
                             <Box display="flex" marginX={3} justifyContent="right" >
-                                <Button type="submit" className={recClasses.submitBtn}>Add Training</Button>
+                                <Button type="submit" className={classes.submitBtn}>Add Course</Button>
                             </Box>
                             <Box paddingY={2} />
                         </Box>

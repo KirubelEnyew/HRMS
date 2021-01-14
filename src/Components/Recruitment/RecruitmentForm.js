@@ -14,7 +14,7 @@ const RecruitmentForm = () => {
                                 <Box display='flex' flexDirection='column'>
                                     <Box paddingY={2} />
                                     <FormControl className={recClasses.formControl}>
-                                        <InputLabel>Deparment</InputLabel>
+                                        <InputLabel>Department</InputLabel>
                                         <Select required>
                                             <MenuItem></MenuItem>
                                         </Select>

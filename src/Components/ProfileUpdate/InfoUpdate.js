@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Button, Container, Grid, Paper, TextField } from '@material-ui/core';
 import useStyle from '../../Styling';
+import { Link } from 'react-router-dom';
 const InfoUpdate = () => {
     const iClasses = useStyle();
     return (
@@ -42,7 +43,9 @@ const InfoUpdate = () => {
                                     <Box mx={6} my={3} display="flex" flexDirection="row">
                                         <Button className={iClasses.submitBtn} type="submit">Update Profile</Button>
                                         <Box marginX={2}/>
-                                        <Button>Cancel</Button>
+                                        <Link to='/Home' className={iClasses.links}>
+                                        <Button classes={{root:iClasses.updateCancelBtn}}>Cancel</Button>
+                                        </Link>
                                     </Box>
                                     </Grid>
                                 </Box>

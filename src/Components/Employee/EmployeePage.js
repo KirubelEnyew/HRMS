@@ -1,7 +1,7 @@
 import React from 'react';
 import {Hidden, Drawer, AppBar, Toolbar, List, ListItem, ListItemIcon, ListItemText, IconButton, Box, Typography, Divider, MenuItem, Collapse} from '@material-ui/core';
 import {Menu as MenuList} from '@material-ui/core';
-import {AccessTime,Menu, MoreVert, PlaylistAddCheck, Report, EmojiPeople, Stars, ExpandLess, ExpandMore}from '@material-ui/icons';
+import {AccessTime,Menu, MoreVert, Report, EmojiPeople, Stars, ExpandLess, ExpandMore}from '@material-ui/icons';
 import useStyle from '../../Styling';
 const EmployeePage = () =>
 {
@@ -26,11 +26,11 @@ const EmployeePage = () =>
         <div>
             <Divider/>
             <List>
-                <ListItem className = {classes.itemColor} button>
+                <ListItem className={classes.itemColor} button>
                     <ListItemIcon><AccessTime/></ListItemIcon>
                     <ListItemText>Clock In</ListItemText>
                 </ListItem>
-                <ListItem className = {classes.itemColor} onClick={handleCollapse} button>
+                <ListItem className={classes.itemColor} onClick={handleCollapse} button>
                     <ListItemIcon><Report/></ListItemIcon>
                     <ListItemText>Generate Report</ListItemText>
                     {collapsed? <ExpandLess/>:<ExpandMore/>}
@@ -57,18 +57,16 @@ const EmployeePage = () =>
                 </Collapse>
 
 
-                <ListItem className = {classes.itemColor} button>
+                <ListItem className={classes.itemColor} button>
                     <ListItemIcon><Stars/></ListItemIcon>
                     <ListItemText>Your Performance Rating</ListItemText>
                 </ListItem >
-                <ListItem className = {classes.itemColor} button>
-                    <ListItemIcon><PlaylistAddCheck/></ListItemIcon>
-                    <ListItemText>Attendance</ListItemText>
-                </ListItem>
-                <ListItem className = {classes.itemColor} button>
+                <Link to='/LeaveForm' className={classes.links}>
+                <ListItem className={classes.itemColor} button>
                     <ListItemIcon><EmojiPeople/></ListItemIcon>
                     <ListItemText>Request Leave</ListItemText>
                 </ListItem>
+                </Link>
             </List>
 
         </div>
@@ -76,7 +74,7 @@ const EmployeePage = () =>
     const drawerHeader = (
         <div>
             <Box display='flex' justifyContent='center' p={2}>
-                <Typography variant='h6' className={classes.itemHeder}>HR Management System</Typography>
+                <Typography variant='h6' className={classes.itemHeader}>HR Management System</Typography>
             </Box>
         </div>
     )
@@ -113,7 +111,9 @@ const EmployeePage = () =>
                         onClose={handleClose}
                         >
                             <MenuItem>Log Out</MenuItem>
+                            <Link to='/ProfileUpdate' className={classes.links}>
                             <MenuItem>Manage Account</MenuItem>
+                            </Link>
                         </MenuList>
                 </Toolbar>
             </AppBar>
